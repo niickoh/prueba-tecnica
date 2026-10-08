@@ -1,0 +1,21 @@
+{
+  "name": "fullstack-senior",
+  "version": "1.0.0",
+  "description": "Challenge técnico. Este challenge consiste en dos partes, una de frontend y otra de backend. Dado que solemos trabajar en ambos mundos, te pedimos que lo tengas en cuenta a la hora de diseñar y desarrollar las distintas capas del proyecto.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/csc6955440/engineering-assessments/fullstack-senior.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://gitlab.com/csc6955440/engineering-assessments/fullstack-senior/issues"
+  },
+  "homepage": "https://gitlab.com/csc6955440/engineering-assessments/fullstack-senior#readme"
+}

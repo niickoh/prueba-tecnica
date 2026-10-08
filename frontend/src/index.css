@@ -1,0 +1,85 @@
+@import 'tailwindcss';
+
+/*
+ * Tokens semánticos. Los componentes usan roles (bg-surface, text-ink...),
+ * nunca hex sueltos, así el modo oscuro se resuelve en un solo lugar.
+ * Paleta de datos: slot 1 (azul) para series únicas; estados reservados
+ * (good/warning/serious/critical) siempre acompañados de texto.
+ */
+:root {
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --surface-sunken: #f0efec;
+  --ink: #0b0b0b;
+  --ink-secondary: #52514e;
+  --line: rgb(11 11 11 / 0.12);
+  --grid: #e1e0d9;
+  --accent: #2a78d6;
+  --accent-ink: #1c5cab;
+  --accent-contrast: #ffffff;
+  --series-1: #2a78d6;
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-serious: #ec835a;
+  --status-critical: #d03b3b;
+  --status-neutral: #898781;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --surface-sunken: #232321;
+    --ink: #ffffff;
+    --ink-secondary: #c3c2b7;
+    --line: rgb(255 255 255 / 0.12);
+    --grid: #2c2c2a;
+    --accent: #3987e5;
+    --accent-ink: #86b6ef;
+    --accent-contrast: #0b0b0b;
+    --series-1: #3987e5;
+  }
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-ink: var(--ink);
+  --color-ink-secondary: var(--ink-secondary);
+  --color-line: var(--line);
+  --color-grid: var(--grid);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-series-1: var(--series-1);
+  --color-status-good: var(--status-good);
+  --color-status-warning: var(--status-warning);
+  --color-status-serious: var(--status-serious);
+  --color-status-critical: var(--status-critical);
+  --color-status-neutral: var(--status-neutral);
+  --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-page font-sans text-ink antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
